@@ -1,0 +1,16 @@
+# mysql驱动
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/repo_sys
+    username: root
+    password: Ele1234.
+# 端口
+server:
+  port: 8888
+
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: on #下划线命名与驼峰命名自动转换

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.reposystem.mapper.GoodMapper">
+<!--    编写动态标签-->
+    <select id="list" resultType="com.example.reposystem.basicentity.Good">
+        select g.*, t.type_name from good g join type t on g.type_id = t.id
+        <where>
+            <if test="typeId!=null">
+                type_id=#{typeId}
+            </if>
+        <if test="goodName != null">
+
+            good_name like #{goodName}
+        </if>
+
+        </where>
+    </select>
+
+    <select id="recordList" resultType="com.example.reposystem.basicentity.Records">
+        select r.*, g.good_code,g.good_name from records r join good g on g.id = r.good_id
+        <where>
+            <if test="goodName != null">
+
+                g.good_name like #{goodName}
+            </if>
+
+        </where>
+    </select>
+
+
+    <update id="addRelation">
+        update rule
+        <set>
+            state = #{state},
+            <if test="maxNum != null">max_num = #{maxNum},
+            </if>
+            <if test="minNum != null">min_num = #{minNum},
+            </if>
+            <if test="goodId != null">related_good_id = #{goodId},
+            </if>
+            <if test="typeId != null">related_type_id = #{typeId},
+            </if>
+        </set>
+
+        <where>
+            state = #{temptState}
+        </where>
+    </update>
+
+    <select id="listRules" resultType="com.example.reposystem.basicentity.Rule">
+        select r.* ,g.good_name as related_good_name,t.type_name as related_type_name from rule r LEFT JOIN good g ON r.related_good_id =g.id
+            LEFT JOIN type t ON r.related_type_id = t.id
+    </select>
+
+</mapper>

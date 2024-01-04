@@ -1,0 +1,10 @@
+com\example\reposystem\RepoSystemApplication.class
+com\example\reposystem\service\serviceimpl\UserServiceImpl.class
+com\example\reposystem\controller\UserController.class
+com\example\reposystem\basicentity\Good.class
+com\example\reposystem\basicentity\Result.class
+com\example\reposystem\basicentity\Type.class
+com\example\reposystem\service\UserService.class
+com\example\reposystem\basicentity\User.class
+com\example\reposystem\mapper\UserMapper.class
+com\example\reposystem\basicentity\Record.class
