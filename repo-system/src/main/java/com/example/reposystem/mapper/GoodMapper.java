@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper
 public interface GoodMapper {
 
-    @Insert("insert into good(good_name,good_code,description,unit,first_in_time,recent_alter_time)" +
-            " value(#{goodName},#{goodCode},#{description},#{unit},now(),now())")
+    @Insert("insert into good(good_name,good_code,description,unit,first_in_time,recent_alter_time,type_id)" +
+            " value(#{goodName},#{goodCode},#{description},#{unit},now(),now(),#{typeId})")
     void add(Good good);//增加新的商品信息
 
     @Select("select * from good where good_name = #{goodName}")

@@ -35,7 +35,7 @@
             <el-table-column label="商品分类" prop="typeName"></el-table-column>
             <el-table-column label="商品库存" widt="100" prop="number"></el-table-column>
             <el-table-column label="库存单位" prop="unit"></el-table-column>
-            <el-table-column label="最近出、入库时间" prop="recentAlterTime"> </el-table-column>
+            <el-table-column label="最近更新时间" prop="recentAlterTime" sortable> </el-table-column>
             <el-table-column label="操作" width="150">
                 <template #default="{ row }">
                     <el-button :icon="Notebook" circle plain type="primary" @click="showDetail(row)" title="查看"></el-button>

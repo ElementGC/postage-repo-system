@@ -10,12 +10,13 @@
             <if test="typeId!=null">
                 type_id=#{typeId}
             </if>
-        <if test="goodName != null">
+            <if test="goodName != null">
 
-            good_name like #{goodName}
-        </if>
-
+                good_name like #{goodName}
+            </if>
         </where>
+        ORDER BY recent_alter_time desc
+
     </select>
 
     <select id="recordList" resultType="com.example.reposystem.basicentity.Records">
@@ -27,6 +28,7 @@
             </if>
 
         </where>
+        ORDER BY alter_time desc
     </select>
 
 

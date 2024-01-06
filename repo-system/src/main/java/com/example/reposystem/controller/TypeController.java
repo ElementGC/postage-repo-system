@@ -35,6 +35,11 @@ public class TypeController {
 
     @DeleteMapping
     public Result delete(Integer id){
+        //未分类（id=1）不能删除
+        if(id == 1){
+            return Result.error("初始分类，不能删除");
+        }
+        //删除这个id对应的分类
         typeService.delete(id);
         return Result.success("删除成功");
     }

@@ -35,6 +35,10 @@ public class TypeServiceImpl implements TypeService {
 
     @Override
     public void delete(Integer id) {
+        //转移属于这个分类商品到未分类（typeId=1）中
+        typeMapper.transfer(id);
+        //删除分类
         typeMapper.delete(id);
+
     }
 }

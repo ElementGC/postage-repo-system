@@ -54,7 +54,7 @@
         <el-container>
             <!-- 头部区域 -->
             <el-header>
-                <div style="margin-left: 20px;">欢迎访问&nbsp;&nbsp;&nbsp;<strong>仓库管理系统</strong></div>
+                <div style="margin-left: 20px;">欢迎访问&nbsp;&nbsp;&nbsp;<strong>邮政货件仓储系统</strong></div>
                 <el-row class="headright">
                     <el-col span="0">
                         <div>

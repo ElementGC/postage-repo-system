@@ -164,8 +164,8 @@ const deleteType = (row) => {
             let result = await goodTypeDeleteService(row.id)
             //用户点击了确认
             ElMessage({
-                type: 'success',
-                message: '删除成功',
+                type: result.code==0?'success':'error',
+                message: result.message,
             })
             //重新刷新列表
             goodTypeList()

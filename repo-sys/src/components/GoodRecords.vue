@@ -24,7 +24,7 @@
             <el-table-column label="商品条码" prop="goodCode"></el-table-column>
             <el-table-column label="操作" prop="statusName"></el-table-column>
             <el-table-column label="数量" prop="alterNum" width="100"></el-table-column>
-            <el-table-column label="操作发生时间" prop="alterTime" width="200"> </el-table-column>
+            <el-table-column label="操作发生时间" prop="alterTime" width="200" sortable > </el-table-column>
             <template #empty>
                 <el-empty description="没有数据" image-size="15%" />
             </template>

@@ -20,4 +20,7 @@ public interface TypeMapper {
 
     @Delete("delete from type where id = #{id}")
     void delete(Integer id);//删除指定分类
+
+    @Update("update good set type_id = 1 where type_id = #{id}")
+    void transfer(Integer id);//将good表中type_id=id的项，type_id =1
 }
